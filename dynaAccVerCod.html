@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta name="Author" content="Hovace"/>
+    <meta name="Copyright" content="远程柜台"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>动账签约短信验证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="pas" class="backgroundImg">
+    <form action="">
+        <div class="canB">
+            <div id="" class="liCenter">
+                <p class="pRow">
+                    <input type="tel" class="pasInput dynamicAccount" id="count" placeholder="请输入签约手机号">
+                </p>
+                <p class="pRow">
+
+                    <input type="number" class="pasInput verificationCode" placeholder="请输入短信验证码">
+                    <input type="button" value="短信验证码" id="btn" class="countDown">
+                <div style="clear: both"></div>
+
+                </p>
+            </div>
+            <p class="yes">
+                <input type="checkbox" id="chkBox" class="chk"/>本人已同意<a href="##">《XX银行动账短信提醒服务协议》</a>
+            </p>
+            <input type="submit" disabled value="下一步" class="btn_submit" id="btn_submit">
+
+        </div>
+    </form>
+
+
+</div>
+<script type="text/javascript" src="js/check.js"></script>
+<script type="text/javascript" src="js/countDown.js"></script>
+<script type="text/javascript" src="js/inputFocus.js"></script>
+
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        time(this);
+
+        //手机号
+        var countPhone = document.getElementById("count").value;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta name="Author" content="Hovace"/>
+    <meta name="Copyright" content="远程柜台"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <title>风险评估</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div id="bb" class="backgroundImg">
+
+    <div class="canB bankPad">
+
+        <h4 class="padTB">风险承受能力评估</h4>
+        <p class="riskWarning tBa">
+            风险提示：在进行证券交易时，可能会获得较高的投资收益，但同时也存在着较大的证券投资风险。为了使投资者更好的了解其中的风险，根据有关证券交易法律法规和证券交易所业务规则，提供风险揭示书，请认真仔细阅读。</p>
+
+        <div class="conT tBa col">
+            为贯彻落实中国证监会办法的《证券投资基金销售适用性指导意见》，规范基金网上基金销售行为，确保基金和相关产品销售的适用性，切实保障基金投资人的权益，请及时评估您的风险承受能力。
+        </div>
+        <div class="QABox" id="QABox">
+            <ul class="conT tBa col boT">1.您的年龄介于
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q1">
+                        A. 18-30岁
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="5" name="q1">
+                        B. 31-50岁
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q1">
+                        C. 51-65岁
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q1">
+                        D. 高于65岁
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">2、您的学历？
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q2">
+                        A. 高中及以下
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q2">
+                        B. 中专或大专
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="5" name="q2">
+                        C. 本科
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q2">
+                        D. 硕士及以上
+                    </label>
+                </li>
+            </ul>
+
+
+            <ul class="conT tBa col boT">3、您的职业为：
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q3">
+                        A. 无固定职业
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="5" name="q3">
+                        B. 专业技术人员
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q3">
+                        C. 一般企事业单位员工
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q3">
+                        D. 金融行业一般从业人员
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">4、您的家庭可支配年收入为（折合人民币）？
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q4">
+                        A. 50万元以下
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="5" name="q4">
+                        B. 50—100万元
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q4">
+                        C. 100—500万元
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="7" name="q4">
+                        D. 500—1000万元
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q4">
+                        E. 1000万元以上
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">5、在您每年的家庭可支配收入中，可用于金融投资（储蓄存款除外）的比例为？
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q5">
+                        A. 小于10%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q5">
+                        B. 10%至25%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q5">
+                        C. 25%至50%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q5">
+                        D. 大于50%
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">6、 您的投资知识可描述为：
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q6">
+                        A. 有限：基本没有金融产品方面的知识
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q6">
+                        B. 一般：对金融产品及其相关风险具有基本的知识和理解
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q6">
+                        C. 丰富：对金融产品及其相关风险具有丰富的知识和理解
+                    </label>
+                </li>
+            </ul>
+
+
+            <ul class="conT tBa col boT">7、您的投资经验可描述为：
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q7">
+                        A. 除银行储蓄外，基本没有其他投资经验
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q7">
+                        B. 购买过债券、保险等理财产品
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q7">
+                        C. 参与过股票、基金等产品的交易
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q7">
+                        D. 参与过权证、期货、期权等产品的交易
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">8、您有多少年投资基金、股票、信托、私募证券或金融衍生产品等风险投资品的经验？
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q8">
+                        A.没有经验
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q8">
+                        B.少于2年
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="5" name="q8">
+                        C.2至5年
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="7" name="q8">
+                        D.5至10年
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q8">
+                        E.10年以上
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">9、您计划的投资期限是多久？
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q9">
+                        A.1年以下
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q9">
+                        B.1至3年
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q9">
+                        C.3至5年
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q9">
+                        D.5年以上
+                    </label>
+                </li>
+            </ul>
+
+
+            <ul class="conT tBa col boT">10、您的投资目的是？
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q10">
+                        A.资产保值
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q10">
+                        B.资产稳健增长
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q10">
+                        C.资产迅速增长
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">11、以下哪项描述最符合您的投资态度？
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q11">
+                        A.厌恶风险，不希望本金损失，希望获得稳定回报
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q11">
+                        B.保守投资，不希望本金损失，愿意承担一定幅度的收益波动
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q11">
+                        C.寻求资金的较高收益和成长性，愿意为此承担有限本金损失
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q11">
+                        D.希望赚取高回报，愿意为此承担较大本金损失
+                    </label>
+                </li>
+            </ul>
+
+
+
+            <ul class="conT tBa col boT">12、假设有两种投资：投资A预期获得10%的收益，可能承担的损失非常小；投资B预期获得30%的收益，但可能承担较大亏损。您会怎么支配您的投资：
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q12">
+                        A. 全部投资于收益较小且风险较小的A
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q12">
+                        B. 同时投资于A和B，但大部分资金投资于收益较小且风险较小的A
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q12">
+                        C. 同时投资于A和B，但大部分资金投资于收益较大且风险较大的B
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q12">
+                        D. 全部投资于收益较大且风险较大的B
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="conT tBa col boT">13、 您认为自己能承受的最大投资损失是多少？
+                <li>
+                    <label>
+                        <input type="radio" value="3" name="q13">
+                        A. 10%以内
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="4" name="q13">
+                        B. 10%-30%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="6" name="q13">
+                        C. 30%-50%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="8" name="q13">
+                        D. 超过50%
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="btnCen">
+            <input type="submit" value="确认" class="btn_submit btn" id="btn_submit">
+        </div>
+
+    </div>
+
+</div>
+<script type="text/javascript" src="js/risk.js"></script>
+<script language="javascript">
+
+
+   /* document.getElementById("btn_submit").addEventListener("click", function () {
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+            submitBtnClick(JSON.stringify(a));
+        } else if (/android/.test(ua)) {
+            window.bankeys.androidSubmit(JSON.stringify(a));
+        }
+
+    });
+*/
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta name="Author" content="Hovace"/>
+    <meta name="Copyright" content="远程柜台"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <title>购买理财产品</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div id="bb" class="backgroundImg">
+
+
+    <div class="canB bankPad">
+        <p class="pRow">
+        <p class="minT">购买金额（单位：元）</p>
+        <input type="number" class="pasInput bankQuota" id="buyMon" placeholder="最大限额 50,000 元">
+        </p>
+        <p class="pRow">
+        <p class="minT">交易密码</p>
+        <input type="password" class="pasInput bankQuota" id="buyPass" placeholder="输入银行交易密码">
+        </p>
+        <p class="h">电子签名：</p>
+        <div id="canvasDiv">
+        </div>
+        <span id="btn_clear" class="btn_clear">清除</span>
+
+        <p class="yes">
+            <input type="checkbox" id="chkBox" class="chk"/>本人已同意<a href="##">《收付宝数字证书条例》</a>
+        </p>
+        <input type="submit" disabled value="提交" class="btn_submit" id="btn_submit">
+
+    </div>
+
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
+<script type="text/javascript" src="js/inputFocus.js"></script>
+<script language="javascript">
+
+
+    document.getElementById("btn_submit").addEventListener("click", function () {
+        var buyPass = document.getElementById("buyPass").value, buyMon = document.getElementById("buyMon").value;
+        var a = {
+            signImgData: canvas.toDataURL("image/png"),
+            buyPass: buyPass,
+            buyMon: buyMon
+        };
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+            submitBtnClick(JSON.stringify(a));
+        } else if (/android/.test(ua)) {
+            window.bankeys.androidSubmit(JSON.stringify(a));
+        }
+
+    })
+
+
+</script>
+
+
+</body>
+
+</html>

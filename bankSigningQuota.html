@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta name="Author" content="Hovace"/>
+    <meta name="Copyright" content="远程柜台"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <title>银行签约限额</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div id="bb" class="backgroundImg">
+
+
+    <div class="canB bankPad">
+        <p class="pRow">
+            <input type="number" class="pasInput bankQuota" id="maxQuota" placeholder="最大限额 50,000 元">
+        </p>
+        <p class="pRow">
+            <input type="number" class="pasInput bankQuota" id="everydayCumulative" placeholder="每日累计限额 1,000,000 元">
+        </p>
+        <p class="pRow">
+            <input type="number" class="pasInput bankQuota" id="messageStarting" placeholder="短信验证起点金额 0.001 元">
+        </p>
+        <p class="h">电子签名：</p>
+        <div id="canvasDiv">
+        </div>
+        <span id="btn_clear" class="btn_clear">清除</span>
+
+        <p class="yes">
+            <input type="checkbox" id="chkBox" class="chk"/>本人已同意<a href="##">《收付宝数字证书条例》</a>
+        </p>
+        <input type="submit" disabled value="提交" class="btn_submit" id="btn_submit">
+
+    </div>
+
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
+<script type="text/javascript" src="js/inputFocus.js"></script>
+<script language="javascript">
+
+
+    document.getElementById("btn_submit").addEventListener("click", function () {
+        var maxQuota = document.getElementById("maxQuota").value, everydayCumulative = document.getElementById("everydayCumulative").value, messageStarting = document.getElementById("messageStarting").value;
+        var a = {
+            signImgData: canvas.toDataURL("image/png"),
+            maxQuota: maxQuota,
+            everydayCumulative: everydayCumulative,
+            messageStarting: messageStarting
+        };
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+            submitBtnClick(JSON.stringify(a));
+        } else if (/android/.test(ua)) {
+            window.bankeys.androidSubmit(JSON.stringify(a));
+        }
+
+    })
+
+
+</script>
+
+
+</body>
+
+</html>
