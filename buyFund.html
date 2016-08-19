@@ -8,6 +8,69 @@
     <title>购买理财产品</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/index.css">
+
+    <!-- KeyBoard -->
+    <link href="css/weiKeyBoard.css" rel="stylesheet"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/weiKeyBoard1.0.js"></script>
+
+    <script language="javascript">
+
+        (function () {
+
+            $(function () {
+                var keyBoard = new weiKeyBoard($("#buyPass"), true, false, 6);
+                var bt = document.getElementById("btn_submit"), err = document.getElementById("err");
+                $("#buyPass").click(function () {
+
+                    document.activeElement.blur();
+                    keyBoard.createKeyBoard();//创建键盘
+                });
+
+                bt.addEventListener("click", function () {
+                    var buyMon = document.getElementById("buyMon").value;
+                    var buyPass = keyBoard.getRealValue();
+                    if(buyPass.length>=6){
+                            var a = {
+                                signImgData: canvas.toDataURL("image/png"),
+                                buyPass: buyPass,
+                                buyMon: buyMon
+                            };
+
+                            var ua = navigator.userAgent.toLowerCase();
+                            if (/iphone|ipad|ipod/.test(ua)) {
+                                submitBtnClick(JSON.stringify(a));
+                            } else if (/android/.test(ua)) {
+                                window.bankeys.androidSubmit(JSON.stringify(a));
+                            }
+                        } else {
+                            console.log("密码错误")
+                        }
+
+
+                });
+
+            });
+
+        })();
+      /*  document.getElementById("btn_submit").addEventListener("click", function () {
+            var buyPass = document.getElementById("buyPass").value, buyMon = document.getElementById("buyMon").value;
+            var a = {
+                signImgData: canvas.toDataURL("image/png"),
+                buyPass: buyPass,
+                buyMon: buyMon
+            };
+            var ua = navigator.userAgent.toLowerCase();
+            if (/iphone|ipad|ipod/.test(ua)) {
+                submitBtnClick(JSON.stringify(a));
+            } else if (/android/.test(ua)) {
+                window.bankeys.androidSubmit(JSON.stringify(a));
+            }
+
+        })
+
+*/
+    </script>
 </head>
 <body>
 
@@ -23,14 +86,15 @@
         <p class="minT">交易密码</p>
         <input type="password" class="pasInput bankQuota" id="buyPass" placeholder="输入银行交易密码">
         </p>
+        <p class="yes">
+            <input type="checkbox" id="chkBox" class="chk"/>本人已同意<a href="fundAg.html">《XXX银行理财产品协议》</a>
+        </p>
         <p class="h">电子签名：</p>
         <div id="canvasDiv">
         </div>
         <span id="btn_clear" class="btn_clear">清除</span>
 
-        <p class="yes">
-            <input type="checkbox" id="chkBox" class="chk"/>本人已同意<a href="##">《收付宝数字证书条例》</a>
-        </p>
+
         <input type="submit" disabled value="提交" class="btn_submit" id="btn_submit">
 
     </div>
@@ -39,27 +103,7 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
 <script type="text/javascript" src="js/inputFocus.js"></script>
-<script language="javascript">
 
-
-    document.getElementById("btn_submit").addEventListener("click", function () {
-        var buyPass = document.getElementById("buyPass").value, buyMon = document.getElementById("buyMon").value;
-        var a = {
-            signImgData: canvas.toDataURL("image/png"),
-            buyPass: buyPass,
-            buyMon: buyMon
-        };
-        var ua = navigator.userAgent.toLowerCase();
-        if (/iphone|ipad|ipod/.test(ua)) {
-            submitBtnClick(JSON.stringify(a));
-        } else if (/android/.test(ua)) {
-            window.bankeys.androidSubmit(JSON.stringify(a));
-        }
-
-    })
-
-
-</script>
 
 
 </body>
