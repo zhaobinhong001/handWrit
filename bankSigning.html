@@ -48,6 +48,14 @@
 
         //手机号
         var bankPhone = document.getElementById("bankTel").value;
+
+
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+            submitBtnClick();
+        } else if (/android/.test(ua)) {
+            window.bankeys.androidSubmit();
+        }
     }
 </script>
 </body>
