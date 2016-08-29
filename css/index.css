@@ -229,6 +229,21 @@ body {
     color: #4a4a4a;
 }
 
+.flo{
+    position: fixed;
+    bottom:5em;
+    right: 3em;
+    background-image:url(../img/X.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: 3rem  ;
+    border:none;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
 .btnCen {
     width: 80%;
     display: block;

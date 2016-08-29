@@ -140,6 +140,7 @@
         6、不要轻信任何与我行客户服务电话95566相似的来电或短信提供的信息。如对信息内容存有疑问，请拨打我行客户服务热线进行确认。<br>
         更多网银安全常识，请登录我行网站，点击“电子银行服务”进入安全防护栏目详细了解。<br>
     </p>
+
 </div>
 <div id="bb" class="backgroundImg">
 
@@ -158,6 +159,7 @@
     </div>
 
 </div>
+<div id="flo" class="flo"></div>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
 <script language="javascript">
@@ -174,6 +176,29 @@
         }
 
     });
+    var floBtn=document.getElementById("flo"),canvasDiv=document.getElementById("canvasDiv");
+
+    floBtn.onclick=function(){
+        document.documentElement.scrollTop=document.body.scrollTop=canvasDiv.offsetTop;
+        floBtn.style.display="none";
+
+    };
+
+
+   /* window.onload = function(){
+        var oTop = document.getElementById("to_top");
+        var screenw = document.documentElement.clientWidth || document.body.clientWidth;
+        var screenh = document.documentElement.clientHeight || document.body.clientHeight;
+        oTop.style.left = screenw - oTop.offsetWidth +"px";
+        oTop.style.top = screenh - oTop.offsetHeight + "px";
+        window.onscroll = function(){
+            var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+            oTop.style.top = screenh - oTop.offsetHeight + scrolltop +"px";
+        }
+        oTop.onclick = function(){
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+    }*/
 
 
 </script>
