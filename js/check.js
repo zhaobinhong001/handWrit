@@ -8,7 +8,7 @@ chk.onclick = function () {
         sub.style.background = "#ee4c5b";
         sub.disabled = "";
     } else {
-        sub.style.background = "#e1828b";
+        sub.style.background = "#746d6e";
         sub.disabled = "disabled";
     }
 }
