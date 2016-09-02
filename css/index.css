@@ -153,6 +153,7 @@ body {
 }
 
 .pasInput {
+    max-width: 170px;
     background-color: #848484;
     line-height: 30px;
     height: 30px;
