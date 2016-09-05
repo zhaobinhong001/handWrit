@@ -176,28 +176,39 @@
         }
 
     });
-    var floBtn=document.getElementById("flo"),canvasDiv=document.getElementById("canvasDiv");
+    var a = 1;
+    var floBtn = document.getElementById("flo"), canvasDiv = document.getElementById("canvasDiv");
 
-    floBtn.onclick=function(){
-        document.documentElement.scrollTop=document.body.scrollTop=canvasDiv.offsetTop;
-        floBtn.style.display="none";
+
+    floBtn.onclick = function () {
+
+        document.body.scrollTop = canvasDiv.offsetTop;
+        window.setTimeout(function(){
+            floBtn.style.display = "none";
+        },200);
 
     };
 
+    window.onscroll = function () {
+
+            floBtn.style.display = "block";
+
+    }
+
 
     /* window.onload = function(){
-         var oTop = document.getElementById("to_top");
-         var screenw = document.documentElement.clientWidth || document.body.clientWidth;
-         var screenh = document.documentElement.clientHeight || document.body.clientHeight;
-         oTop.style.left = screenw - oTop.offsetWidth +"px";
-         oTop.style.top = screenh - oTop.offsetHeight + "px";
-         window.onscroll = function(){
-             var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
-             oTop.style.top = screenh - oTop.offsetHeight + scrolltop +"px";
-         }
-         oTop.onclick = function(){
-             document.documentElement.scrollTop = document.body.scrollTop =0;
-         }
+     var oTop = document.getElementById("to_top");
+     var screenw = document.documentElement.clientWidth || document.body.clientWidth;
+     var screenh = document.documentElement.clientHeight || document.body.clientHeight;
+     oTop.style.left = screenw - oTop.offsetWidth +"px";
+     oTop.style.top = screenh - oTop.offsetHeight + "px";
+     window.onscroll = function(){
+     var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+     oTop.style.top = screenh - oTop.offsetHeight + scrolltop +"px";
+     }
+     oTop.onclick = function(){
+     document.documentElement.scrollTop = document.body.scrollTop =0;
+     }
      }
      */
 
