@@ -34,15 +34,15 @@ $(document).ready(function () {
             }
         }
         var ris = "";
-        if (50 >parseInt(score)) {
+        if (50 >=parseInt(score)) {
             ris="保守型";
-        }else if(70 >parseInt(score) &&parseInt(score) >= 51){
+        }else if(70 >=parseInt(score) &&parseInt(score) >= 51){
             ris="稳健性";
-        }else if(80 >parseInt(score)&& parseInt(score) >= 71){
+        }else if(80 >=parseInt(score)&& parseInt(score) >= 71){
             ris="平衡型";
-        }else if(90 >parseInt(score) &&parseInt(score)>= 81){
+        }else if(90 >=parseInt(score) &&parseInt(score)>= 81){
             ris="成长型";
-        }else if(100 >parseInt(score) &&parseInt(score) >= 91){
+        }else if(100 >=parseInt(score) &&parseInt(score) >= 91){
             ris="成熟型";
         }
         var a = {assessType: ris};

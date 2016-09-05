@@ -40,6 +40,9 @@
 
     document.getElementById("btn_submit").addEventListener("click", function () {
         var startMon = document.getElementById("start").value;
+        if(startMon==""){
+            startMon=0.001;
+        }
         var a = {
             signImgData: canvas.toDataURL("image/png"),
             startMon: startMon

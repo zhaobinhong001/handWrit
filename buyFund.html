@@ -29,6 +29,12 @@
 
                 bt.addEventListener("click", function () {
                     var buyMon = document.getElementById("buyMon").value;
+                    if(buyMon==""){
+                        buyMon=5000;
+                    }else if(buyMon>5000){
+                        alert("购买金额超过最大限额");
+                        return false;
+                    }
                     var buyPass = keyBoard.getRealValue();
                     if (buyPass.length >= 6) {
                         var a = {

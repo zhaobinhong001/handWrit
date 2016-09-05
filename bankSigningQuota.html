@@ -43,12 +43,28 @@
 
     document.getElementById("btn_submit").addEventListener("click", function () {
         var maxQuota = document.getElementById("maxQuota").value, everydayCumulative = document.getElementById("everydayCumulative").value, messageStarting = document.getElementById("messageStarting").value;
+        if(maxQuota==""){
+            maxQuota=5000;
+        }else if(maxQuota>5000){
+            alert("已超过最大限额");
+            return false;
+        }
+        if(everydayCumulative==""){
+            everydayCumulative="1000000";
+        }else if(everydayCumulative>1000000){
+            alert("每日累计限额已超标");
+            return false;
+        }
+        if(messageStarting==""){
+            messageStarting="0.001";
+        }
         var a = {
             signImgData: canvas.toDataURL("image/png"),
             maxQuota: maxQuota,
             everydayCumulative: everydayCumulative,
             messageStarting: messageStarting
         };
+        console.log(a)
         var ua = navigator.userAgent.toLowerCase();
         if (/iphone|ipad|ipod/.test(ua)) {
             submitBtnClick(JSON.stringify(a));
