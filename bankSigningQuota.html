@@ -22,7 +22,7 @@
             <input type="number" class="pasInput bankQuota" id="everydayCumulative" placeholder="每日累计限额 1,000,000 元">
         </p>
         <p class="pRow">
-            <input type="number" class="pasInput bankQuota" id="messageStarting" placeholder="短信验证起点金额 0.001 元">
+            <input type="number" class="pasInput bankQuota" id="messageStarting" placeholder="短信验证起点金额 0.01 元">
         </p>
         <p class="h">电子签名：</p>
         <div id="canvasDiv">
@@ -44,8 +44,8 @@
     document.getElementById("btn_submit").addEventListener("click", function () {
         var maxQuota = document.getElementById("maxQuota").value, everydayCumulative = document.getElementById("everydayCumulative").value, messageStarting = document.getElementById("messageStarting").value;
         if(maxQuota==""){
-            maxQuota=5000;
-        }else if(maxQuota>5000){
+            maxQuota=50000;
+        }else if(maxQuota>50000){
             alert("已超过最大限额");
             return false;
         }
@@ -56,7 +56,7 @@
             return false;
         }
         if(messageStarting==""){
-            messageStarting="0.001";
+            messageStarting="0.01";
         }
         var a = {
             signImgData: canvas.toDataURL("image/png"),
@@ -64,7 +64,7 @@
             everydayCumulative: everydayCumulative,
             messageStarting: messageStarting
         };
-        console.log(a)
+        console.log(a);
         var ua = navigator.userAgent.toLowerCase();
         if (/iphone|ipad|ipod/.test(ua)) {
             submitBtnClick(JSON.stringify(a));

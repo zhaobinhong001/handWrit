@@ -18,7 +18,7 @@
 
         <p class="pRow">
         <p class="minT">设置短信提醒起点金额（单位：元）</p>
-        <input type="number" class="pasInput bankQuota" id="start" placeholder="短信验证起点金额 0.001 元">
+        <input type="number" class="pasInput bankQuota" id="start" placeholder="短信验证起点金额 0.01 元">
         </p>
         <p class="h">电子签名：</p>
         <div id="canvasDiv">
@@ -41,7 +41,10 @@
     document.getElementById("btn_submit").addEventListener("click", function () {
         var startMon = document.getElementById("start").value;
         if(startMon==""){
-            startMon=0.001;
+            startMon=0.01;
+        }
+        if(startMon<0.01){
+            return false;
         }
         var a = {
             signImgData: canvas.toDataURL("image/png"),
@@ -49,6 +52,7 @@
         };
         var ua = navigator.userAgent.toLowerCase();
         if (/iphone|ipad|ipod/.test(ua)) {
+            console.log(startMon);
             submitBtnClick(JSON.stringify(a));
         } else if (/android/.test(ua)) {
             window.bankeys.androidSubmit(JSON.stringify(a));

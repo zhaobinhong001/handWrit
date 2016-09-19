@@ -30,8 +30,9 @@
                 bt.addEventListener("click", function () {
                     var buyMon = document.getElementById("buyMon").value;
                     if(buyMon==""){
-                        buyMon=5000;
-                    }else if(buyMon>5000){
+                        alert("购买金额不能为空");
+                        return false;
+                    }else if(buyMon>50000){
                         alert("购买金额超过最大限额");
                         return false;
                     }
@@ -49,11 +50,10 @@
                         } else if (/android/.test(ua)) {
                             window.bankeys.androidSubmit(JSON.stringify(a));
                         }
-                    }
-                    if (buyPass.length == 0) {
+                    }else if (buyPass.length == 0) {
                         alert("密码不能为空");
                     } else {
-                        console.log("密码错误");
+                        alert("密码错误");
                     }
 
 
